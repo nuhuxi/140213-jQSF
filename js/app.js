@@ -12,19 +12,18 @@ $(document).ready(function() {
       eventLoop ();
       console.log("mouseisoverryu = false;")
   	})
-
-  
+ 
   .mousedown(function() {
         mouseisdown = true;
         eventLoop ();        
         console.log("mouseisdown = true;")
   	})
+
   .mouseup(function() {
         mouseisdown = false;
         eventLoop ();
         console.log("mouseisdown = false;")
     })
-
 
   $(document).keydown(function(event) {
         if (event.keyCode === 88) { 
@@ -33,7 +32,6 @@ $(document).ready(function() {
         console.log("xisdown = true;") 
         }
       })
-
 
   $(document).keyup(function(event) {
         if (event.keyCode === 88) { 
@@ -48,8 +46,9 @@ var mouseisoverryu = false;
 var mouseisdown = false;
 
 function eventLoop () {
-//***************************************************
-// These statements determine what ryu is doing
+
+  //***************************************************
+  // These statements determine what ryu is doing
   //1
     if (mouseisoverryu == true &&
         xisdown == true &&
@@ -122,16 +121,16 @@ function ryuisStill (){
       $(".ryu-ready").hide();
       $(".hadouken").hide();
       $(".ryu-cool").hide();
-
 }
+
 function ryuisReady (){
       $('.ryu-still').hide();
       $(".ryu-throwing").hide();
       $(".ryu-ready").show();
       $(".hadouken").hide();
       $(".ryu-cool").hide();
-
 } 
+
 function ryuisFiring (){
       playHadouken();
       $('.ryu-still').hide();
@@ -139,28 +138,25 @@ function ryuisFiring (){
       $(".ryu-ready").hide();
       $(".hadouken").show();
       $(".ryu-cool").hide();
-        // }
-    /*$("hadouken").finish().show()
-      .animate(
-        {"left": "300px",
-          500,
-        function() {
-          $(this).hide();
-          $this).css("left", "-212px"):
-        }
+      $(".hadouken").finish().show()
+        .animate(
+          {"left": "300px"},
+            500, 
+          function() {
+            $(this).hide();
+            $(this).css("left", "-212px"); 
+          } 
+        );
 
-      );*/
-      //animate hadouken to the right off the screen
-
+      
 }
+
 function ryuisChillin (){
       $('.ryu-still').hide();
       $(".ryu-throwing").hide();
       $(".ryu-ready").hide();
       $(".hadouken").hide();
       $(".ryu-cool").show();
-
-
 }
 
 function playHadouken () {
